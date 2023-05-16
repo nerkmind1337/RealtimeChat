@@ -6,10 +6,10 @@ interface pageProps {
 
 }
 
-const page = async ({ }) => {
+const Page = async ({ }) => {
 
     const session = await getServerSession(authOptions)
     return <pre>dashboard</pre>
 }
 
-export default page
+export default Page

@@ -35,7 +35,7 @@ async function getChatMessages(chatId: string) {
     }
 }
 
-const page = async ({ params }: PageProps) => {
+const Page = async ({ params }: PageProps) => {
     const { chatId } = params;
     const session = await getServerSession(authOptions);
     if (!session) notFound();
@@ -76,4 +76,4 @@ const page = async ({ params }: PageProps) => {
     </div>
 }
 
-export default page
+export default Page
