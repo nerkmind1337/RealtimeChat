@@ -36,7 +36,7 @@ export async function POST(req: Request) {
         if (isAlreadyFriends) return new NextResponse("You already added this person", { status: 400 });
         //valid request, send req
 
-        pusherServer.trigger(toPusherKey(`user:${idToAdd}:incoming_friend_requests`), 'incoming_friend_request', {
+        await pusherServer.trigger(toPusherKey(`user:${idToAdd}:incoming_friend_requests`), 'incoming_friend_request', {
             senderId: session.user.id,
             senderEmail: session.user.email
         })
