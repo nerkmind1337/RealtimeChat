@@ -31,7 +31,7 @@ const Messages: FC<MessagesProps> = ({
 
         return () => {
             pusherClient.unsubscribe(toPusherKey(`chat:${chatId}:incoming-message`))
-            pusherClient.unbind('iincoming-message', messageHandler);
+            pusherClient.unbind('incoming-message', messageHandler);
         }
     }, [])
     const scrollDownRef = useRef<HTMLDivElement | null>(null)
